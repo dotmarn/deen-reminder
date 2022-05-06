@@ -1,0 +1,31 @@
+{
+    "author": "Ridwan Kasim",
+    "description": "An extension that displays random hadiths & Qur'an verses for Muslims.",
+    "short_name": "DeenReminder",
+    "version": "1.0.0",
+    "manifest_version": "2",
+    "name": "Deen Reminder",
+    "permissions": [
+        "activeTab"
+    ],
+    "browser_action": {
+        "default_title": "Boost your Eeman",
+        "default_icon": "",
+        "default_popup": ""
+    },
+    "chrome_url_overrides": {
+        "newtab": ""
+    },
+    "icons": {
+        "16": "",
+        "48": "",
+        "128": ""
+    },
+    "page_action": {
+        "default_action": {
+            "16": "",
+            "48": "",
+            "128": ""
+        }
+    }
+}
