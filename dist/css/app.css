@@ -504,6 +504,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100%;
 }
 
+.h-screen{
+  height: 100vh;
+}
+
 .w-full{
   width: 100%;
 }
@@ -542,6 +546,27 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#272e48\]{
   --tw-bg-opacity: 1;
   background-color: rgb(39 46 72 / var(--tw-bg-opacity));
+}
+
+.bg-gradient-to-r{
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-b{
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.from-indigo-500{
+  --tw-gradient-from: #6366f1;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(99 102 241 / 0));
+}
+
+.via-purple-500{
+  --tw-gradient-stops: var(--tw-gradient-from), #a855f7, var(--tw-gradient-to, rgb(168 85 247 / 0));
+}
+
+.to-pink-500{
+  --tw-gradient-to: #ec4899;
 }
 
 .py-2\.5{
