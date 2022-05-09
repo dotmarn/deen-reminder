@@ -1,1 +1,7 @@
-{}
+{
+    "/dist/js/newtab.js": "/dist/js/newtab.js",
+    "/dist/images/128x128.png": "/dist/images/128x128.png",
+    "/dist/images/16x16.png": "/dist/images/16x16.png",
+    "/dist/images/48x48.png": "/dist/images/48x48.png",
+    "/dist/images/download.jpeg": "/dist/images/download.jpeg"
+}
