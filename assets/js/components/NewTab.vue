@@ -24,11 +24,9 @@ export default {
     },
     methods: {
         async fetchQuote() {
-            let url = "json/data.json";
+            let url = "https://deen-reminder.herokuapp.com/api/v1/fetch-quotes";
             await axios.get(url).then((res) => {
-                let data = res.data;
-                let random = Math.floor(Math.random() * data.length);
-                this.quote = data[random];
+                this.quote = res.data.data;
             }).catch((error) => {
                 console.log(error);
             });

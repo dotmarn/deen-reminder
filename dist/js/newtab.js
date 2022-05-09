@@ -19811,12 +19811,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                url = "json/data.json";
+                url = "https://deen-reminder.herokuapp.com/api/v1/fetch-quotes";
                 _context.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().get(url).then(function (res) {
-                  var data = res.data;
-                  var random = Math.floor(Math.random() * data.length);
-                  _this.quote = data[random];
+                  _this.quote = res.data.data;
                 })["catch"](function (error) {
                   console.log(error);
                 });
