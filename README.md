@@ -1,9 +1,9 @@
 # About
 <div align="center">
 
-![DeenReminder](/icon.png)
+![DeenReminder](/dist/images/16x16.png)
 
-A Chrome browser extension that displays random hadiths & Qur'an verses for Muslims. :fire:
+A Chrome browser extension that displays random adhkar & Qur'an verses for Muslims.
 
 </div>
 
