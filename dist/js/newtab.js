@@ -19803,7 +19803,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       quote: {},
       roman: '',
       english: '',
-      source: ''
+      source: '',
+      template: ''
     };
   },
   created: function created() {
@@ -19836,15 +19837,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     generateScreenshot: function generateScreenshot(item) {
-      var el = document.getElementById('screenshot');
-      el.style.display = 'grid';
+      var _this2 = this;
+
+      this.template.style.display = 'grid';
       this.roman = item.roman;
       this.english = item.english;
       this.source = item.source;
-      html_to_image__WEBPACK_IMPORTED_MODULE_2__.toPng(el, {
+      html_to_image__WEBPACK_IMPORTED_MODULE_2__.toPng(this.template, {
         height: 500
       }).then(function (dataUrl) {
-        el.style.display = 'none';
+        _this2.template.style.display = 'none';
         (0,file_saver__WEBPACK_IMPORTED_MODULE_3__.saveAs)(dataUrl, 'deen.png');
       })["catch"](function (error) {
         console.log(error);
@@ -19852,8 +19854,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   mounted: function mounted() {
-    var el = document.getElementById('screenshot');
-    el.style.display = 'none';
+    this.template = document.getElementById('screenshot');
+    this.template.style.display = 'none';
   }
 });
 
@@ -19873,7 +19875,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "flex flex-col h-screen"
+  "class": "flex flex-col h-screen mx-auto"
 };
 var _hoisted_2 = {
   key: 0,

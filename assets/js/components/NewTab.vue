@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col h-screen">
+    <div class="flex flex-col h-screen mx-auto">
         <div class="grid place-items-center my-auto" v-if="quote">
             <div class="shadow-2xl rounded-lg bg-[#242424] border-2 border-[#42B883] text-center p-8 space-y-5">
                 <div class="text-right mx-auto">
@@ -43,7 +43,8 @@ export default {
             quote: {},
             roman: '',
             english: '',
-            source: ''
+            source: '',
+            template: ''
         }
     },
     created() {
@@ -60,14 +61,13 @@ export default {
         },
 
         generateScreenshot(item) {
-            var el = document.getElementById('screenshot');
-            el.style.display = 'grid';
+            this.template.style.display = 'grid';
             this.roman = item.roman;
             this.english = item.english;
             this.source = item.source;
-            htmlToImage.toPng(el, { height: 500 })
-                .then(function (dataUrl) {
-                    el.style.display = 'none';
+            htmlToImage.toPng(this.template, { height: 500 })
+                .then((dataUrl) => {
+                    this.template.style.display = 'none';
                     saveAs(dataUrl, 'deen.png');
                 }).catch((error) => {
                     console.log(error);
@@ -75,8 +75,8 @@ export default {
         }
     },
     mounted() {
-        var el = document.getElementById('screenshot');
-        el.style.display = 'none';
+        this.template = document.getElementById('screenshot');
+        this.template.style.display = 'none';
     }
 }
 </script>
