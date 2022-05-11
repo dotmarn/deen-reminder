@@ -7,24 +7,35 @@
                         <i class="fas fa-share-alt fa-2x text-white"></i>
                     </button>
                 </div>
-                <h1 class="text-white italic font-Monts text-3xl">{{quote.roman}}</h1>
-                <h1 class="text-[#ebebeb99] font-Karla font-bold text-3xl">{{quote.english}}</h1>
-                <p class="italic font-Karla text-[#42B883]">- {{quote.source}}</p>
+                <h1 class="text-white italic font-Monts text-3xl">{{ quote.roman }}</h1>
+                <h1 class="text-[#ebebeb99] font-Karla font-bold text-3xl">{{ quote.english }}</h1>
+                <p class="italic font-Karla text-[#42B883]">- {{ quote.source }}</p>
             </div>
         </div>
     </div>
 
-    <div id="screenshot" class="bg-[#323A49] py-2 px-6">
-        <div class="text-center space-y-5 py-2">
-            <p class="text-[#52FFA8] font-semibold font-Karla text-sm">{{ source }}</p>
-            <h1 class="italic font-Monts text-lg text-[#CEE3E9]">{{ roman }}</h1>
-            <h1 class="font-bold font-Karla text-sm text-white">{{ english }}</h1>
+        <div id="screenshot" class="bg-[#323A49] py-2 px-6 grid place-items-center my-auto">
+            <div class="text-center space-y-5 px-16">
+                <p class="text-[#52FFA8] font-semibold font-Karla text-base">{{ source }}</p>
+                <h1 class="font-bold font-Karla text-5xl text-white">{{ english }}</h1>
+                <p class="font-bold font-Karla text-lg text-[#ebebeb99]">{{ roman }}</p>
+            </div>
+    
+            <div class="border-t border-t-[#CEE3E9]">
+                <div class="flex items-center space-x-2">
+                    <img src="images/16x16.png" alt="" class="">
+                    <p class="font-Karla text-white">#DeenReminder</p>
+                </div>
+            </div>
         </div>
-    </div>
+
 </template>
 
 <script>
 import axios from 'axios';
+import * as htmlToImage from 'html-to-image';
+import { saveAs } from 'file-saver';
+
 export default {
     name: 'NewTab',
     data() {
@@ -39,8 +50,7 @@ export default {
         this.fetchQuote();
     },
     methods: {
-        async fetchQuote() 
-        {
+        async fetchQuote() {
             let url = "https://deen-reminder.herokuapp.com/api/v1/fetch-quotes";
             await axios.get(url).then((res) => {
                 this.quote = res.data.data;
@@ -49,14 +59,24 @@ export default {
             });
         },
 
-        async generateScreenshot(item)
-        {
+        generateScreenshot(item) {
+            var el = document.getElementById('screenshot');
+            el.style.display = 'grid';
             this.roman = item.roman;
             this.english = item.english;
             this.source = item.source;
-
-            
+            htmlToImage.toPng(el, { height: 500 })
+                .then(function (dataUrl) {
+                    el.style.display = 'none';
+                    saveAs(dataUrl, 'deen.png');
+                }).catch((error) => {
+                    console.log(error);
+                });
         }
+    },
+    mounted() {
+        var el = document.getElementById('screenshot');
+        el.style.display = 'none';
     }
 }
 </script>
