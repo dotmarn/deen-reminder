@@ -1,8 +1,8 @@
 {
     "/dist/js/newtab.js": "/dist/js/newtab.js",
-    "/dist/json/data.json": "/dist/json/data.json",
     "/dist/images/128x128.png": "/dist/images/128x128.png",
     "/dist/images/16x16.png": "/dist/images/16x16.png",
     "/dist/images/48x48.png": "/dist/images/48x48.png",
+    "/dist/images/bg.png": "/dist/images/bg.png",
     "/dist/images/download.jpg": "/dist/images/download.jpg"
 }

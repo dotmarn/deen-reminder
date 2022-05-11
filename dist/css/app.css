@@ -675,6 +675,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-image: url('/images/download.jpg');
 }
 
+.bg-\[url\(\'\/images\/bg\.png\'\)\]{
+  background-image: url('/images/bg.png');
+}
+
 .bg-cover{
   background-size: cover;
 }

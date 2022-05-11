@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col h-screen">
-        <div class="grid place-items-center my-auto">
-            <div class="shadow-2xl rounded-lg bg-[#242424] border-2 border-[#42B883] text-center p-8 space-y-5" v-if="quote">
+        <div class="grid place-items-center my-auto" v-if="quote">
+            <div class="shadow-2xl rounded-lg bg-[#242424] border-2 border-[#42B883] text-center p-8 space-y-5">
                 <h1 class="text-white italic font-Monts text-3xl">{{quote.roman}}</h1>
                 <h1 class="text-[#ebebeb99] font-Karla font-bold text-3xl">{{quote.english}}</h1>
                 <p class="italic font-Karla text-[#42B883]">- {{quote.source}}</p>
