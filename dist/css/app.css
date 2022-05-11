@@ -559,6 +559,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: auto;
 }
 
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mb-5{
   margin-bottom: 1.25rem;
 }
@@ -663,6 +668,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(36 36 36 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#323A49\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(50 58 73 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'images\/download\.jpg\'\)\]{
   background-image: url('images/download.jpg');
 }
@@ -734,8 +744,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.25rem;
 }
 
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .text-center{
   text-align: center;
+}
+
+.text-right{
+  text-align: right;
 }
 
 .font-Karla{
@@ -754,6 +773,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-3xl{
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-semibold{
@@ -788,6 +817,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-\[\#42B883\]{
   --tw-text-opacity: 1;
   color: rgb(66 184 131 / var(--tw-text-opacity));
+}
+
+.text-\[\#52FFA8\]{
+  --tw-text-opacity: 1;
+  color: rgb(82 255 168 / var(--tw-text-opacity));
+}
+
+.text-\[\#CEE3E9\]{
+  --tw-text-opacity: 1;
+  color: rgb(206 227 233 / var(--tw-text-opacity));
 }
 
 .underline{
